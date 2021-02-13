@@ -24,6 +24,7 @@ function SideNavbar() {
 				<Link to="#" className="menu-bars close">
 					{!showSideBar && <FaBars onClick={toggleSideBar} />}
 				</Link>
+				<div className="appTitle">STAR WARS</div>
 			</div>
 			<nav className={showSideBar ? 'nav-menu active' : 'nav-menu'}>
 				<ul className="nav-menu-items">

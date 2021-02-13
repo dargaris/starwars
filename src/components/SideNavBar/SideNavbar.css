@@ -84,3 +84,9 @@ span {
 	align-items: flex-start;
 	justify-content: flex-start;
 }
+
+.appTitle {
+	font-size: 30px;
+	color: #ffffff;
+	margin-left: 50%;
+}
