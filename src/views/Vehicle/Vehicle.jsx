@@ -2,7 +2,7 @@ import React from "react";
 
 const Vehicle = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             Vehicle
         </div>
     )

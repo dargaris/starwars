@@ -2,7 +2,7 @@ import React from "react";
 
 const Species = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             Species
         </div>
     )

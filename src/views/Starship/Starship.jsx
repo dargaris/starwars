@@ -2,7 +2,7 @@ import React from "react";
 
 const Starship = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             Starship
         </div>
     )

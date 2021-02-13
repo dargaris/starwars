@@ -1,17 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "baseUrl": "src",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "module": "esnext",
-    "jsx": "react",
-    "checkJs": true
-  },
-  "include": [
-    "src"
-  ]
+    "baseUrl": "./src"
+  }
 }
