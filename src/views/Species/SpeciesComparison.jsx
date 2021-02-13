@@ -2,7 +2,7 @@ import React from "react";
 
 const SpeciesComparison = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             Species Comparison
         </div>
     )

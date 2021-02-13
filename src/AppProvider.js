@@ -3,6 +3,9 @@ import AppReducer from './AppReducer';
 
 const initialState = {
 	data: {},
+	sideNavPick: 'planets',
+	topNavPick: '',
+	showSideBar: true,
 };
 
 export const AppContext = createContext({});

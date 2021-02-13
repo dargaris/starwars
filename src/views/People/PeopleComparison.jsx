@@ -2,7 +2,7 @@ import React from "react";
 
 const PeopleComparison = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             People Comparison
         </div>
     )
