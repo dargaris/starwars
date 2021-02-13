@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
-import { SideBarData } from './SideBarData';
-import './Navbar.css';
+import { SideBarData } from './SideNavData';
+import './SideNavbar.css';
 
-function Navbar() {
+function SideNavbar() {
 	const [sidebar, setSidebar] = useState(false);
 	const showSideBar = () => {
 		setSidebar(!sidebar);
@@ -13,7 +13,7 @@ function Navbar() {
 		<>
 			<div className="navbar">
 				<Link to="#" className="menu-bars close">
-					<FaBars onClick={showSideBar} />
+					{!sidebar && <FaBars onClick={showSideBar} />}
 				</Link>
 			</div>
 			<nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -37,4 +37,4 @@ function Navbar() {
 	);
 }
 
-export default Navbar;
+export default SideNavbar;

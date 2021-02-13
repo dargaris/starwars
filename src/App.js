@@ -14,7 +14,7 @@ import StarshipComparison from 'views/Starship/StarshipComparison';
 import VehicleComparison from 'views/Vehicle/VehicleComparison';
 
 import AppProvider from 'AppProvider';
-import Navbar from './components/Navbar';
+import SideNavBar from './components/SideNavBar';
 import './App.css';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
 		<>
 			<AppProvider>
 				<Router basename="/">
-					<Navbar />
+					<SideNavBar />
 					<Switch>
 						<Route exact path="/">
 							<Redirect to="/planets" />
