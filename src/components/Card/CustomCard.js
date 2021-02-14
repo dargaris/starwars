@@ -13,7 +13,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		minWidth: 250,
+		minWidth: 400,
 	},
 	expand: {
 		transform: 'rotate(0deg)',
@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	expandOpen: {
 		transform: 'rotate(180deg)',
+	},
+	content: {
+		padding: '16px 16px 0px 16px',
+		height: 170
 	},
 }));
 
@@ -46,7 +50,7 @@ export default function CustomCard(props) {
 				style={{ background: 'linear-gradient(60deg,grey,white)', height: '20px' }}
 				title={props.name}
 			/>
-			<CardContent>{props.cardContent()}</CardContent>
+			<CardContent className={classes.content}>{props.children}</CardContent>
 			<CardActions disableSpacing>
 				<IconButton
 					className={clsx(classes.expand, {
