@@ -6,7 +6,7 @@
 	align-items: center;
 	width: 100%;
 	position: fixed;
-	top:0;
+	top: 0;
 	z-index: 1;
 }
 
@@ -93,8 +93,11 @@ span {
 	z-index: 1;
 }
 
-.appTitle {
+.app-title {
 	font-size: 30px;
 	color: #ffffff;
-	margin-left: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }

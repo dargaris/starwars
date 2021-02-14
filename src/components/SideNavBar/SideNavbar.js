@@ -24,7 +24,7 @@ function SideNavbar() {
 				<Link to="#" className="menu-bars close">
 					{!showSideBar && <FaBars onClick={toggleSideBar} />}
 				</Link>
-				<div className="appTitle">STAR WARS</div>
+				<div className={`app-title ${showSideBar ? 'left-spacing' : ''}`}>STAR WARS</div>
 			</div>
 			<nav className={showSideBar ? 'nav-menu active' : 'nav-menu'}>
 				<ul className="nav-menu-items">
@@ -43,7 +43,7 @@ function SideNavbar() {
 					})}
 				</ul>
 			</nav>
-			<div className={`nav-wrapper ${showSideBar ? 'leftSpacing':''}`}>
+			<div className={`nav-wrapper ${showSideBar ? 'left-spacing' : ''}`}>
 				<TopNavBar />
 			</div>
 		</>
