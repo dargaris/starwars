@@ -3,6 +3,14 @@ import AppReducer from './AppReducer';
 
 const initialState = {
 	data: {},
+	sideNavPick: 'planets',
+	topNavPick: '',
+	showSideBar: false,
+	people: [],
+	planets: [],
+	starships: [],
+	vehicles: [],
+	species: []
 };
 
 export const AppContext = createContext({});

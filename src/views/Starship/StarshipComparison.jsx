@@ -2,7 +2,7 @@ import React from "react";
 
 const StarshipComparison = () => {
     return (
-        <div>
+        <div className='contentpanel'>
             Starship Comparison
         </div>
     )
