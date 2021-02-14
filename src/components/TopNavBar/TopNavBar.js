@@ -22,7 +22,6 @@ export default function TopNavBar(props) {
 			indicatorColor="primary"
 			textColor="primary"
 			onChange={handleChange}
-			style={{ marginLeft: showSideBar ? '250px' : '0px' }}
 		>
 			<Link to={`${sideNavPick}`} style={{ textDecoration: 'none' }}>
 				<Tab label="Summary" textColor="primary" />

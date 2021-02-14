@@ -43,7 +43,7 @@ function SideNavbar() {
 					})}
 				</ul>
 			</nav>
-			<div className="nav-wrapper">
+			<div className={`nav-wrapper ${showSideBar ? 'leftSpacing':''}`}>
 				<TopNavBar />
 			</div>
 		</>

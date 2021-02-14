@@ -13,9 +13,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		maxWidth: 500,
-		margin: 10,
-		width: '32%',
 		minWidth: 250,
 	},
 	expand: {
