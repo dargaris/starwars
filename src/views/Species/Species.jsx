@@ -1,25 +1,29 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../AppProvider';
 import { Grid } from '@material-ui/core';
-import { getSpecies } from './SpeciesServices';
 import MainContent from 'components/SummaryComponents';
-import { SET_SPECIES } from 'constants/actionTypes';
+import { SET_SPECIES, SET_PEOPLE, SET_PLANETS } from 'constants/actionTypes';
 
 const Species = () => {
 	const { state, dispatch } = useContext(AppContext);
-    const { showSideBar } = state;
-    const { species } = state;
-	//const [species, setSpecies] = useState([]);
+	const { showSideBar } = state;
+	const { species, people, planets } = state;
 
-/* 	useEffect(async () => {
-		let response = await getSpecies();
-		setSpecies(response);
-    }, []); */
-
-    const deleteObject = (index) => {
+	const deleteObject = (index) => {
 		let speciesSet = [...species];
+		let selfLink = speciesSet[index].SelfLink;
 		speciesSet.splice(index, 1);
 		dispatch({ type: SET_SPECIES, value: speciesSet });
+		let peopleNewSet = people.map((person) => {
+			let speciesLinks = person?.additionalInfo?.Species?.filter((spec) => spec !== selfLink);
+			return { ...person, additionalInfo: { ...person.additionalInfo, Species: speciesLinks } };
+        });
+        dispatch({ type: SET_PEOPLE, value: peopleNewSet });
+		let planetsNewSet = planets.map((category) => {
+			let speciesLinks = category?.additionalInfo?.Species?.filter((spec) => spec !== selfLink);
+			return { ...category, additionalInfo: { ...category.additionalInfo, Species: speciesLinks } };
+		});
+		dispatch({ type: SET_PLANETS, value: planetsNewSet });
 	};
 
 	return (

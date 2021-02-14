@@ -1,25 +1,24 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../AppProvider';
 import { Grid } from '@material-ui/core';
-import { getVehicles } from './VehicleServices';
 import MainContent from 'components/SummaryComponents';
-import { SET_VEHICLES } from 'constants/actionTypes';
+import { SET_VEHICLES, SET_PEOPLE } from 'constants/actionTypes';
 
 const Vehicles = () => {
 	const { state, dispatch } = useContext(AppContext);
     const { showSideBar } = state;
-    const { vehicles } = state;
-	//const [vehicles, setVehicles] = useState([]);
-
-/* 	useEffect(async () => {
-		let response = await getVehicles();
-		setVehicles(response);
-    }, []); */
+    const { vehicles, people } = state;
 
     const deleteObject = (index) => {
-		let vehiclesSet = [...vehicles];
+        let vehiclesSet = [...vehicles];
+        let selfLink = vehiclesSet[index].SelfLink;
 		vehiclesSet.splice(index, 1);
-		dispatch({ type: SET_VEHICLES, value: vehiclesSet });
+        dispatch({ type: SET_VEHICLES, value: vehiclesSet });
+        let peopleNewSet = people.map((person) => {
+			let vehicleLinks = person?.additionalInfo?.Vehicles?.filter((spec) => spec !== selfLink);
+			return { ...person, additionalInfo: { ...person.additionalInfo, Vehicles: vehicleLinks } };
+        });
+        dispatch({ type: SET_PEOPLE, value: peopleNewSet });
     };
 
 	return (
