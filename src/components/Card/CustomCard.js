@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	content: {
 		padding: '16px 16px 0px 16px',
-		height: 170,
+		minHeight: 200,
 	},
 	more: {
 		marginTop: '-30px',
