@@ -17,7 +17,7 @@ const Vehicles = () => {
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
 			<Grid container spacing={2} padding={2} xs={12}>
-				{vehicles.map((vehicle) => MainContent(vehicle))}
+				{vehicles.map((vehicle, index) => MainContent(vehicle, index))}
 			</Grid>
 		</div>
 	);

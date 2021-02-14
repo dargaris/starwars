@@ -17,7 +17,7 @@ const Starship = () => {
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
 			<Grid container spacing={2} padding={2} xs={12}>
-				{starship.map((category) => MainContent(category))}
+				{starship.map((category, index) => MainContent(category, index))}
 			</Grid>
 		</div>
 	);

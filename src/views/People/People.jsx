@@ -17,7 +17,7 @@ const People = () => {
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
 			<Grid container spacing={2} padding={2} xs={12}>
-				{people.map((person) => MainContent(person))}
+				{people.map((person, index) => MainContent(person, index))}
 			</Grid>
 		</div>
 	);

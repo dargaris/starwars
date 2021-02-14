@@ -17,7 +17,7 @@ const Species = () => {
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
 			<Grid container spacing={2} padding={2} xs={12}>
-				{species.map((category) => MainContent(category))}
+				{species.map((category, index) => MainContent(category, index))}
 			</Grid>
 		</div>
 	);

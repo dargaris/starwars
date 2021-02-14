@@ -5,7 +5,7 @@ import { Grid, Box } from '@material-ui/core';
 export const EachKeyItem = (key, item) => {
 	return (
 		item && (
-			<Grid item xs={6}>
+			<Grid item xs={6} key={key}>
 				<Grid container>
 					<Grid item xs={7} style={{ fontSize: 'small', fontWeight: 600 }}>
 						{key}
@@ -23,15 +23,15 @@ export const AdditionalInfoRow = (key, item) => {
 	const temp = item?.[0]?.split('/');
 	const navItem = temp?.[temp?.length - 3];
 	return (
-		<Grid item xs={6}>
+		<Grid item xs={6} key={key}>
 			<Box item xs={12} style={{ fontSize: 'small', fontWeight: 600 }}>
 				{key}
 			</Box>
 			<Box item xs={12}>
 				<Grid container>
 					{!item?.length && 'No Information Available'}
-					{item?.map((value) => (
-						<Grid item xs={12}>
+					{item?.map((value, index) => (
+						<Grid item xs={12} key={index}>
 							<Link to={navItem}>{value}</Link>
 						</Grid>
 					))}
@@ -51,9 +51,9 @@ export const AdditionalInfo = (addInfoRows) => {
 	);
 };
 
-export const MainContent = (row) => {
+export const MainContent = (row, index) => {
 	return (
-		<Grid item xs={12} sm={12} md={6} lg={4}>
+		<Grid item xs={12} sm={12} md={6} lg={4} key={index}>
 			<CustomCard name={row?.Name} moreInfo={() => AdditionalInfo(row.additionalInfo)}>
 				<Grid container spacing={1}>
 					{Object.keys(row?.info)?.map((key) => EachKeyItem(key, row.info[key]))}

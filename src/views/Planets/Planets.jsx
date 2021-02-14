@@ -17,7 +17,7 @@ const Planets = () => {
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
 			<Grid container spacing={2} padding={2} xs={12}>
-				{planets.map((planet) => MainContent(planet))}
+				{planets.map((planet, index) => MainContent(planet, index))}
 			</Grid>
 		</div>
 	);
