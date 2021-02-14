@@ -34,5 +34,5 @@ export const processPeopleRow = (res) => {
 		Starship: res.starships,
 		//SelfLink: res.url
 	};
-	return { Name: res.name, info, additionalInfo };
+	return { Name: res.name, SelfLink: res.url, info, additionalInfo };
 };

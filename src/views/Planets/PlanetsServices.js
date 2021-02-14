@@ -30,7 +30,6 @@ export const processPlanetsRow = (res) => {
 	let additionalInfo = {
 		Residents: res.residents,
 		Films: res.films,
-		//SelfLink: res.url
 	};
-	return { Name: res.name, info, additionalInfo };
+	return { Name: res.name, SelfLink: res.url, info, additionalInfo };
 };

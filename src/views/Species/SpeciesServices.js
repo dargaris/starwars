@@ -33,5 +33,5 @@ export const processSpeciesRow = (res) => {
 		People: res.people,
 		//SelfLink: res.url
 	};
-	return { Name: res.name, info, additionalInfo };
+	return { Name: res.name, SelfLink: res.url, info, additionalInfo };
 };
