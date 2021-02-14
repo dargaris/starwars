@@ -26,7 +26,7 @@ export const processPeopleRow = (res) => {
 		Edited: dateFormat(res.edited),
 	};
 	let additionalInfo = {
-		Homeworld: [res.homeworld],
+		HomeWorld: res.homeworld ? [res.homeworld] : [],
 		Films: res.films,
 		Species: res.species,
 		Vehicles: res.vehicles,

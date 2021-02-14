@@ -5,7 +5,7 @@ const initialState = {
 	data: {},
 	sideNavPick: 'planets',
 	topNavPick: '',
-	showSideBar: true,
+	showSideBar: false,
 };
 
 export const AppContext = createContext({});
