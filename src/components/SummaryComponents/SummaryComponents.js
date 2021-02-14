@@ -51,10 +51,13 @@ export const AdditionalInfo = (addInfoRows) => {
 	);
 };
 
-export const MainContent = (row, index) => {
+export const MainContent = (row, index, deleteObject) => {
+	const deleteFunc = () => {
+		deleteObject(index);
+	};
 	return (
 		<Grid item xs={12} sm={12} md={6} lg={4} key={index}>
-			<CustomCard name={row?.Name} moreInfo={() => AdditionalInfo(row.additionalInfo)}>
+			<CustomCard name={row?.Name} moreInfo={() => AdditionalInfo(row.additionalInfo)} deleteCallback={deleteFunc}>
 				<Grid container spacing={1}>
 					{Object.keys(row?.info)?.map((key) => EachKeyItem(key, row.info[key]))}
 				</Grid>

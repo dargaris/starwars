@@ -6,6 +6,7 @@ const initialState = {
 	sideNavPick: 'planets',
 	topNavPick: '',
 	showSideBar: false,
+	people: [],
 };
 
 export const AppContext = createContext({});

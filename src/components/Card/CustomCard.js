@@ -45,7 +45,7 @@ export default function CustomCard(props) {
 		<Card className={classes.root}>
 			<CardHeader
 				action={
-					<IconButton aria-label="delete" style={{ marginTop: -14 }}>
+					<IconButton aria-label="delete" style={{ marginTop: -14 }} onClick={props.deleteCallback}>
 						<DeleteIcon />
 					</IconButton>
 				}
