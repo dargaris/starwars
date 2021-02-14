@@ -1,12 +1,13 @@
 import axiosConfig from 'utils/axiosConfig';
 import { dateFormat } from 'utils/commonUtils';
+import { SET_SPECIES } from 'constants/actionTypes';
 
-export const getSpecies = async () => {
+export const getSpecies = async (dispatch) => {
 	let response;
 	try {
 		response = await axiosConfig.get('species');
 		let results = response.data.results.map((row) => processSpeciesRow(row));
-		return results;
+		dispatch({ type: SET_SPECIES, value: results });
 	} catch (e) {
 		console.log(e);
 	}
@@ -19,7 +20,7 @@ export const processSpeciesRow = (res) => {
 		Designation: res.designation,
 		'Average Height': res.average_height,
 		'Skin Colors': res.skin_colors,
-		'Hair Colors':res.hair_colors,
+		'Hair Colors': res.hair_colors,
 		'Eye Colors': res.eye_colors,
 		'Average Lifespan': res.average_lifespan,
 		Language: res.language,

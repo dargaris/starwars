@@ -7,6 +7,10 @@ const initialState = {
 	topNavPick: '',
 	showSideBar: false,
 	people: [],
+	planets: [],
+	starships: [],
+	vehicles: [],
+	species: []
 };
 
 export const AppContext = createContext({});

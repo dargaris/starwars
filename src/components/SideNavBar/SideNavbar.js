@@ -7,6 +7,13 @@ import './SideNavbar.css';
 import { AppContext } from '../../AppProvider';
 import { TOGGLE_SIDEBAR, SET_SIDE_NAV } from '../../constants/actionTypes';
 
+//services
+import { getPlanets } from 'views/Planets/PlanetsServices';
+import { getPeople } from 'views/People/PeopleServices';
+import { getStarship } from 'views/Starship/StarshipServices';
+import { getVehicles } from 'views/Vehicle/VehicleServices';
+import { getSpecies } from 'views/Species/SpeciesServices';
+
 function SideNavbar() {
 	const { state, dispatch } = React.useContext(AppContext);
 	//const [sidebar, setSidebar] = useState(false);
@@ -18,6 +25,13 @@ function SideNavbar() {
 	const setSideNav = (value) => {
 		dispatch({ type: SET_SIDE_NAV, value });
 	};
+	React.useEffect(() => {
+		getPeople(dispatch);
+		getPlanets(dispatch);
+		getStarship(dispatch);
+		getSpecies(dispatch);
+		getVehicles(dispatch);
+	}, []);
 	return (
 		<>
 			<div className="navbar">

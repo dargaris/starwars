@@ -1,12 +1,13 @@
 import axiosConfig from 'utils/axiosConfig';
 import { dateFormat } from 'utils/commonUtils';
+import { SET_PEOPLE } from 'constants/actionTypes';
 
-export const getPeople = async () => {
+export const getPeople = async (dispatch) => {
 	let response;
 	try {
 		response = await axiosConfig.get('people');
 		let results = response.data.results.map((row) => processPeopleRow(row));
-		return results;
+		dispatch({ type: SET_PEOPLE, value: results });
 	} catch (e) {
 		console.log(e);
 	}

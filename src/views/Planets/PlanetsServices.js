@@ -1,12 +1,13 @@
 import axiosConfig from 'utils/axiosConfig';
 import { dateFormat } from 'utils/commonUtils';
+import { SET_PLANETS } from 'constants/actionTypes';
 
-export const getPlanets = async () => {
+export const getPlanets = async (dispatch) => {
 	let response;
 	try {
 		response = await axiosConfig.get('planets');
 		let results = response.data.results.map((row) => processPlanetsRow(row));
-		return results;
+		dispatch({ type: SET_PLANETS, value: results });
 	} catch (e) {
 		console.log(e);
 	}

@@ -1,12 +1,13 @@
 import axiosConfig from 'utils/axiosConfig';
 import { dateFormat } from 'utils/commonUtils';
+import { SET_VEHICLES } from 'constants/actionTypes';
 
-export const getVehicles = async () => {
+export const getVehicles = async (dispatch) => {
 	let response;
 	try {
 		response = await axiosConfig.get('vehicles');
 		let results = response.data.results.map((row) => processVehicleRow(row));
-		return results;
+		dispatch({ type: SET_VEHICLES, value: results });
 	} catch (e) {
 		console.log(e);
 	}

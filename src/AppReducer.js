@@ -1,4 +1,4 @@
-import * as ACTIONS from './constants/actionTypes';
+import * as ACTIONS from 'constants/actionTypes';
 
 const AppReducer = (state, action) => {
 	switch (action.type) {
@@ -14,6 +14,18 @@ const AppReducer = (state, action) => {
 		}
 		case ACTIONS.SET_PEOPLE: {
 			return { ...state, people: action.value };
+		}
+		case ACTIONS.SET_PLANETS: {
+			return { ...state, planets: action.value };
+		}
+		case ACTIONS.SET_STARSHIPS: {
+			return { ...state, starships: action.value };
+		}
+		case ACTIONS.SET_VEHICLES: {
+			return { ...state, vehicles: action.value };
+		}
+		case ACTIONS.SET_SPECIES: {
+			return { ...state, species: action.value };
 		}
 		default:
 			return { ...state };

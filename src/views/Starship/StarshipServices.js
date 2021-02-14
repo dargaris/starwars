@@ -1,12 +1,13 @@
 import axiosConfig from 'utils/axiosConfig';
 import { dateFormat } from 'utils/commonUtils';
+import { SET_STARSHIPS } from 'constants/actionTypes';
 
-export const getStarship = async () => {
+export const getStarship = async (dispatch) => {
 	let response;
 	try {
 		response = await axiosConfig.get('starships');
 		let results = response.data.results.map((row) => processStarshipRow(row));
-		return results;
+		dispatch({ type: SET_STARSHIPS, value: results });
 	} catch (e) {
 		console.log(e);
 	}

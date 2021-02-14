@@ -17,11 +17,10 @@ const People = () => {
 		dispatch({ type: SET_PEOPLE, value: peopleSet });
 	};
 
-	useEffect(async () => {
-		let response = await getPeople();
+/* 	useEffect(async () => {
+		await getPeople(dispatch);
 		//setPeople(response);
-		dispatch({ type: SET_PEOPLE, value: response });
-	}, []);
+	}, []); */
 
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>
