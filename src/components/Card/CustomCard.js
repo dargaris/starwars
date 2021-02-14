@@ -27,7 +27,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	content: {
 		padding: '16px 16px 0px 16px',
-		height: 170
+		height: 170,
+	},
+	more: {
+		marginTop: '-30px',
 	},
 }));
 
@@ -63,11 +66,8 @@ export default function CustomCard(props) {
 					<ExpandMoreIcon />
 				</IconButton>
 			</CardActions>
-			<Collapse in={expanded} timeout="auto" unmountOnExit>
-				<CardContent>
-					<Typography>Links:</Typography>
-					<a href="http://swapi.dev/api/people/1/">http://swapi.dev/api/people/1/</a>,
-				</CardContent>
+			<Collapse in={expanded} timeout="auto" unmountOnExit className={classes.more}>
+				<CardContent>{props.moreInfo()}</CardContent>
 			</Collapse>
 		</Card>
 	);

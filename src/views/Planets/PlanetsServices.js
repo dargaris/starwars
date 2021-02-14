@@ -28,7 +28,7 @@ export const processPlanetsRow = (res) => {
 	};
 	let additionalInfo = {
 		Residents: res.residents,
-		Films: res.Films,
+		Films: res.films,
 		//SelfLink: res.url
 	};
 	return { Name: res.name, info, additionalInfo };
