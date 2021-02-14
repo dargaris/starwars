@@ -6,20 +6,20 @@ import { SET_VEHICLES, SET_PEOPLE } from 'constants/actionTypes';
 
 const Vehicles = () => {
 	const { state, dispatch } = useContext(AppContext);
-    const { showSideBar } = state;
-    const { vehicles, people } = state;
+	const { showSideBar } = state;
+	const { vehicles, people } = state;
 
-    const deleteObject = (index) => {
-        let vehiclesSet = [...vehicles];
-        let selfLink = vehiclesSet[index].SelfLink;
+	const deleteObject = (index) => {
+		let vehiclesSet = [...vehicles];
+		let selfLink = vehiclesSet[index].SelfLink;
 		vehiclesSet.splice(index, 1);
-        dispatch({ type: SET_VEHICLES, value: vehiclesSet });
-        let peopleNewSet = people.map((person) => {
+		dispatch({ type: SET_VEHICLES, value: vehiclesSet });
+		let peopleNewSet = people.map((person) => {
 			let vehicleLinks = person?.additionalInfo?.Vehicles?.filter((spec) => spec !== selfLink);
 			return { ...person, additionalInfo: { ...person.additionalInfo, Vehicles: vehicleLinks } };
-        });
-        dispatch({ type: SET_PEOPLE, value: peopleNewSet });
-    };
+		});
+		dispatch({ type: SET_PEOPLE, value: peopleNewSet });
+	};
 
 	return (
 		<div className={`contentpanel ${showSideBar ? 'left-spacing' : ''}`}>

@@ -10,26 +10,26 @@ const People = () => {
 	const { people, species, planets, starships, vehicles } = state;
 
 	const deleteObject = (index) => {
-        let peopleSet = [...people];
-        let selfLink = peopleSet[index].SelfLink;
+		let peopleSet = [...people];
+		let selfLink = peopleSet[index].SelfLink;
 		peopleSet.splice(index, 1);
-        dispatch({ type: SET_PEOPLE, value: peopleSet });
-        let planetsNewSet = planets.map((planet) => {
+		dispatch({ type: SET_PEOPLE, value: peopleSet });
+		let planetsNewSet = planets.map((planet) => {
 			let peopleLinks = planet?.additionalInfo?.Residents?.filter((person) => person !== selfLink);
 			return { ...planet, additionalInfo: { ...planet.additionalInfo, Residents: peopleLinks } };
 		});
-        dispatch({ type: SET_PLANETS, value: planetsNewSet });
-        let speciesNewSet = species.map((spec) => {
+		dispatch({ type: SET_PLANETS, value: planetsNewSet });
+		let speciesNewSet = species.map((spec) => {
 			let peopleLinks = spec?.additionalInfo?.People?.filter((person) => person !== selfLink);
 			return { ...spec, additionalInfo: { ...spec.additionalInfo, People: peopleLinks } };
 		});
-        dispatch({ type: SET_SPECIES, value: speciesNewSet });
-        let starshipsNewSet = starships.map((starship) => {
+		dispatch({ type: SET_SPECIES, value: speciesNewSet });
+		let starshipsNewSet = starships.map((starship) => {
 			let peopleLinks = starship?.additionalInfo?.Pilots?.filter((person) => person !== selfLink);
 			return { ...starship, additionalInfo: { ...starship.additionalInfo, Pilots: peopleLinks } };
 		});
-        dispatch({ type: SET_STARSHIPS, value: starshipsNewSet });
-        let vehiclesNewSet = vehicles.map((vehicle) => {
+		dispatch({ type: SET_STARSHIPS, value: starshipsNewSet });
+		let vehiclesNewSet = vehicles.map((vehicle) => {
 			let peopleLinks = vehicle?.additionalInfo?.Pilots?.filter((person) => person !== selfLink);
 			return { ...vehicle, additionalInfo: { ...vehicle.additionalInfo, Pilots: peopleLinks } };
 		});

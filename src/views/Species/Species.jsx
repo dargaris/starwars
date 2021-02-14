@@ -17,8 +17,8 @@ const Species = () => {
 		let peopleNewSet = people.map((person) => {
 			let speciesLinks = person?.additionalInfo?.Species?.filter((spec) => spec !== selfLink);
 			return { ...person, additionalInfo: { ...person.additionalInfo, Species: speciesLinks } };
-        });
-        dispatch({ type: SET_PEOPLE, value: peopleNewSet });
+		});
+		dispatch({ type: SET_PEOPLE, value: peopleNewSet });
 		let planetsNewSet = planets.map((category) => {
 			let speciesLinks = category?.additionalInfo?.Species?.filter((spec) => spec !== selfLink);
 			return { ...category, additionalInfo: { ...category.additionalInfo, Species: speciesLinks } };
