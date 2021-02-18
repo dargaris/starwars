@@ -11,9 +11,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		minWidth: 400,
-	},
 	expand: {
 		transform: 'rotate(0deg)',
 		marginLeft: 'auto',
@@ -42,7 +39,7 @@ export default function CustomCard(props) {
 	};
 
 	return (
-		<Card className={classes.root}>
+		<Card >
 			<CardHeader
 				action={
 					<IconButton aria-label="delete" style={{ marginTop: -14 }} onClick={props.deleteCallback}>
