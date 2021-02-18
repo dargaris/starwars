@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import Button from '@material-ui/core/Button';
@@ -35,7 +35,7 @@ function SideNavbar() {
 		dispatch({ type: SET_SIDE_NAV, value });
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		getPeople(dispatch);
 		getPlanets(dispatch);
 		getStarship(dispatch);

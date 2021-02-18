@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -23,7 +23,7 @@ export default function TopNavBar(props) {
 		}
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		dispatch({ type: SET_TOP_NAV, value: 0 });
 		setValue(0);
 	}, [sideNavPick]);
